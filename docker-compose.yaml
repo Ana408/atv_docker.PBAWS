@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  wordpress:
+   	image: wordpress
+    	ports:
+      - "80:80"
+  environment:
+      	WORDPRESS_DB_HOST: "endpoint do seu RDS"
+        WORDPRESS_DB_USER: " usuario do rds"
+      	WORDPRESS_DB_PASSWORD: "senha do rds"
+      	WORDPRESS_DB_NAME: "nome do banco de dados"
+  volumes:
+      	- /mnt/efs/wordpress:/var/www/html
