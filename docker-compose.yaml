@@ -1,13 +1,13 @@
 version: '3.7'
 services:
   wordpress:
-   	image: wordpress
-    	ports:
+    image: wordpress
+    ports:
       - "80:80"
-  environment:
-      	WORDPRESS_DB_HOST: database-1.c3t4rv5m1mo8.us-east-1.rds.amazonaws.com
-        WORDPRESS_DB_USER: admin
-      	WORDPRESS_DB_PASSWORD: admin123
-      	WORDPRESS_DB_NAME: database1
-  volumes:
-      	- /mnt/efs/wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: database-1.c3t4rv5m1mo8.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin123
+      WORDPRESS_DB_NAME: database1
+    volumes:
+      - /mnt/efs/wordpress:/var/www/html
